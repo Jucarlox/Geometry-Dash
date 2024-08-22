@@ -18,7 +18,7 @@ FPS = 120
 obstaculos = []
 
 tiempo_pasado = 0
-tiempo_entre_objetos = 1000
+tiempo_entre_objetos = 500
 
 colision = False
 puntos = 0
@@ -61,6 +61,7 @@ while run:
             if cubo.rect.y+cubo.rect.height < obstaculo.rect.y+obstaculo.rect.height:
                 jump = False
                 colision = True
+                jumpMax = 20
             else:
                 pygame.QUIT
                 run = False

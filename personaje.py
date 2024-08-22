@@ -19,6 +19,7 @@ class Cubo:
                 jumpCount -= 1
             else:
                 jump = False
+                jumpMax = 20
         
         return (jump, jumpCount, jumpMax)         
         
