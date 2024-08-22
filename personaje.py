@@ -6,18 +6,20 @@ import os
 class Cubo:
     def __init__(self):
         self.image = pygame.image.load(os.path.join('imagen1.png')).convert()
-        self.rect = pygame.Rect(0,0,100,100)
-        self.rect.center = (800, 700)
-        self.rect.centerx = 100
+        self.rect = pygame.Rect(100,660,100,100)
         
     def salto(self, jump, jumpCount, jumpMax):
         if jump: #logica de animacion del salto
             self.rect.y -= jumpCount
-            if jumpCount > -jumpMax:
+            if self.rect.y > 650:
+                jump = False
+                jumpMax = 20
+                self.rect.y = 660
+            elif jumpCount > -jumpMax:
                 jumpCount -= 1
             else:
                 jump = False
         
-        return (jump, jumpCount)         
+        return (jump, jumpCount, jumpMax)         
         
 
